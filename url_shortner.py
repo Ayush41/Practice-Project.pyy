@@ -1,4 +1,24 @@
 import tkinter as tk
+import pyshorteners as pysh
+
+
+def shorten_url():
+    # Get the URL from the input entry
+    long_url = lurl_entry.get()
+    
+    # Initialize the URL shortener
+    shortener = pysh.Shortener()
+    
+    # Shorten the URL
+    try:
+        short_url = shortener.tinyurl.short(long_url)
+        # Update the output entry with the shortened URL
+        short_entry.delete(0, tk.END)
+        short_entry.insert(0, short_url)
+    except Exception as e:
+        # Handle errors (e.g., invalid URL)
+        short_entry.delete(0, tk.END)
+        short_entry.insert(0, f"Error: {e}")
 
 root = tk.Tk()
 root.title("URL Shortener")
