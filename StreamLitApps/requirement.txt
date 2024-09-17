@@ -1,2 +1,2 @@
 streamlit=1.37.1
-pyshortener
+pyshortener=1.0.1
