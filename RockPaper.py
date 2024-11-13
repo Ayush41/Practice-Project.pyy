@@ -6,6 +6,10 @@ def play_game():
     userChoice = input("Enter rock,paper or scissors :-").lower()
     computerChoice = random.choice(options)
 
+    if userChoice not in options:
+        print("Invalid choice. Bro Choose from rock, paper, or scissors")
+        return
+
     print(f"Computer Chooses :-{computerChoice}")
 
     if userChoice == computerChoice:
